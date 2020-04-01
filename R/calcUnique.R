@@ -15,7 +15,7 @@
 #' @param .f The function to be called. It take as in input the incoming \code{x} vector or list and
 #' it must return a vector or list of the same length as the input.
 #' @param  ... Any other arguments to be passed to \code{.f}.
-#' @return The normal output of \code{.f} as long as it is of the same length os \code{x}
+#' @return The normal output of \code{.f()} as long as it is of the same length os \code{x}
 #' @examples
 #' #Create a sample of some date text with repeats
 #' ts_sample <-
@@ -44,14 +44,18 @@ calcUnique <-
            .f,
            ...) {
 
+    #Trim down the input to its unique entries
     x_u <- unique(x)
 
+    #Run the function on the unique input
     y_u <- .f(x_u, ...)
 
+    #check to see if the output of .f() is of the same length as the input
     if(length(y_u) != length(x_u)) {
       stop(".f must return an object of the same length as the input vector")
     }
 
+    #Use the match() function to reconstruct what y would have been and return that
     return(
       y_u[match(x = x, table = x_u)]
     )
