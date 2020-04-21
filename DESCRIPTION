@@ -1,12 +1,12 @@
 Package: calcUnique
 Type: Package
 Title: Simple Wrapper for Computationally Expensive Functions
-Version: 0.1.0
+Version: 0.1.1
 Author: Stephen Froehlich
 Maintainer: Stephen Froehlich <stephen.froehlich@gmail.com>
 Description: This is a one-function package that will Pass only unique values to a computationally expensive function that returns an output of the same length as the input.
     In importing and working with tidy data, it is common to have index columns, often including time stamps that are far from unique. Some funcitons to work with these such as text conversion to other variable types (e.g. as.POSIXct()), various grep()-based functions, and often the /code{cut()} function are relatively slow when working with tens of millions of rows or more.
-License: MIT
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.0
