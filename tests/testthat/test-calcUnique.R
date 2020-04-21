@@ -11,7 +11,8 @@ ts_sample <-
     size = 30, replace = TRUE
   )
 
+
+#just the examples from the documentation ... I can't think of others
 expect_equal(calcUnique(ts_sample, as.POSIXct), as.POSIXct(ts_sample))
 
 expect_equal(calcUnique(ts_sample, function(i) gsub("00","$$", i)), gsub("00","$$", ts_sample))
-
